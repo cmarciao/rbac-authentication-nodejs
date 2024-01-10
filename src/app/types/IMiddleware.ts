@@ -1,6 +1,4 @@
-export type IRequest = {
-    headers: Record<string, string>;
-}
+import { IRequest } from "./IRequest";
 
 export type IResponse = {
     statusCode: number;

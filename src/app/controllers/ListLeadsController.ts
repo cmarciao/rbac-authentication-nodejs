@@ -1,5 +1,6 @@
 import { prismaClient } from '../lib/prismaClient';
-import { IController, IRequest, IResponse } from '../types/IController';
+import { IRequest } from '../types/IRequest';
+import { IController, IResponse } from '../types/IController';
 
 export class ListLeadsController implements IController {
     async handle(request: IRequest): Promise<IResponse> {

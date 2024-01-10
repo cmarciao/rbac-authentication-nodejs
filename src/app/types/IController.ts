@@ -1,8 +1,4 @@
-export type IRequest = {
-    body: Record<string, any>;
-    params: Record<string, string>;
-    accountId: string | undefined;
-}
+import { IRequest } from "./IRequest";
 
 export type IResponse = {
     statusCode: number;

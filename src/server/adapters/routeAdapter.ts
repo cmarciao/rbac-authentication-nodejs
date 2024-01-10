@@ -6,7 +6,8 @@ export function routeAdapter(constroller: IController) {
         const {statusCode, body} = await constroller.handle({
             body: req.body,
             params: req.params,
-            accountId: req.metadata?.accountId
+            account: req.metadata?.account,
+            headers: req.headers as Record<string, string>
         });
 
         res.status(statusCode).json(body);
