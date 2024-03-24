@@ -11,12 +11,13 @@ const leadsRoutes = Router();
 
 leadsRoutes.get('/',
     middlewareAdapter(makeAuthenticationMiddleware()),
+    middlewareAdapter(makeAuthorizationMiddleware(['leads:read'])),
     routeAdapter(makeListLeadsController())
 );
 
 leadsRoutes.post('/',
     middlewareAdapter(makeAuthenticationMiddleware()),
-    middlewareAdapter(makeAuthorizationMiddleware(['ADMIN'])),
+    middlewareAdapter(makeAuthorizationMiddleware(['leads:write'])),
     (_, res) => {
         res.status(201).json({ created: true });
     }
